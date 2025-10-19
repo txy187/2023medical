@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>田小燕的Hello World页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .author-info {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #2980b9;
+        }
+        .features {
+            text-align: left;
+            margin: 30px 0;
+        }
+        .features h3 {
+            color: #27ae60;
+        }
+        .features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        .features li:before {
+            content: " ";
+            color: #27ae60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Hello World! </h1>
+        
+        <div class="author-info">
+            <strong>作者：田小燕</strong><br>
+            <strong>学号：20231201030</strong>
+        </div>
+        
+        <p>欢迎来到我的第一个HTML页面！</p>
+        
+        <div class="features">
+            <h3>页面特性：</h3>
+            <ul>
+                <li>响应式设计，适配各种设备</li>
+                <li>现代化的UI界面</li>
+                <li>作者信息展示</li>
+                <li>简洁优雅的样式</li>
+                <li>Git版本控制集成</li>
+            </ul>
+        </div>
+        
+        <p>这是一个基础的Hello World页面，展示了HTML、CSS和JavaScript的基础用法。</p>
+        
+        <button onclick="showMessage()" style="padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            点击我试试！
+        </button>
+        
+        <p id="message" style="margin-top: 20px; color: #e74c3c; font-weight: bold;"></p>
+    </div>
+
+    <script>
+        function showMessage() {
+            const message = document.getElementById('message');
+            message.textContent = ' 恭喜！您成功触发了JavaScript交互！ ';
+            
+            // 添加一些动画效果
+            message.style.transition = 'all 0.3s ease';
+            message.style.transform = 'scale(1.1)';
+            
+            setTimeout(() => {
+                message.style.transform = 'scale(1)';
+            }, 300);
+        }
+        
+        // 页面加载完成后的效果
+        window.addEventListener('load', function() {
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 0.5s ease';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
